@@ -50,12 +50,12 @@ extension String {
 
 	private var hashData: NSData? {
 		guard let cstr = cStringUsingEncoding(NSUTF8StringEncoding) else { return nil }
-		return NSData(bytes: cstr, length: lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+		return NSData(bytes: cstr, length: lengthOfBytes(String.Encoding.utf8))
 	}
 
 	private init?(digestData: NSData?, length: Int32) {
 		guard let digestData = digestData else { return nil }
-		var digest = [UInt8](count: Int(length), repeatedValue: 0)
+    var digest = [UInt8](repeating: 0, count: Int(length))
 		digestData.getBytes(&digest, length: Int(length) * sizeof(UInt8))
 
 		var string = ""
