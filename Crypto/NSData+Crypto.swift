@@ -38,7 +38,7 @@ extension NSData {
   }
 
   public var SHA224: NSData {
-    var hash = [UInt8](repeating: 0, count: Int(CC_SHA224_DIGEST_LENGTH)
+    var hash = [UInt8](repeating: 0, count: Int(CC_SHA224_DIGEST_LENGTH))
       CC_SHA224(bytes, CC_LONG(length), &hash)
       return NSData(bytes: hash, length: Int(CC_SHA224_DIGEST_LENGTH))
   }
