@@ -49,8 +49,8 @@ extension String {
 	// MARK: - Private
 
 	private var hashData: NSData? {
-		guard let cstr = cStringUsingEncoding(NSUTF8StringEncoding) else { return nil }
-		return NSData(bytes: cstr, length: lengthOfBytes(String.Encoding.utf8))
+    guard let cstr = cString(using: String.Encoding.utf8) else { return nil }
+    return NSData(bytes: cstr, length: lengthOfBytes(using: String.Encoding.utf8))
 	}
 
 	private init?(digestData: NSData?, length: Int32) {
