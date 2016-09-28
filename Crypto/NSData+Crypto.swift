@@ -14,49 +14,49 @@ extension NSData {
   // MARK: - Hashing
 
   public var MD2: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_MD2_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_MD2_DIGEST_LENGTH))
     CC_MD2(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_MD2_DIGEST_LENGTH))
   }
 
   public var MD4: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_MD4_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_MD4_DIGEST_LENGTH))
     CC_MD4(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_MD4_DIGEST_LENGTH))
   }
 
   public var MD5: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
     CC_MD5(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_MD5_DIGEST_LENGTH))
   }
 
   public var SHA1: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
     CC_SHA1(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_SHA1_DIGEST_LENGTH))
   }
 
   public var SHA224: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_SHA224_DIGEST_LENGTH)
+    var hash = [UInt8](repeating: 0, count: Int(CC_SHA224_DIGEST_LENGTH)
       CC_SHA224(bytes, CC_LONG(length), &hash)
       return NSData(bytes: hash, length: Int(CC_SHA224_DIGEST_LENGTH))
   }
 
   public var SHA256: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
     CC_SHA256(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
   }
 
   public var SHA384: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_SHA384_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_SHA384_DIGEST_LENGTH))
     CC_SHA384(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_SHA384_DIGEST_LENGTH))
   }
 
   public var SHA512: NSData {
-    var hash = [UInt8](repeatedValue: 0, count: Int(CC_SHA512_DIGEST_LENGTH))
+    var hash = [UInt8](repeating: 0, count: Int(CC_SHA512_DIGEST_LENGTH))
     CC_SHA512(bytes, CC_LONG(length), &hash)
     return NSData(bytes: hash, length: Int(CC_SHA512_DIGEST_LENGTH))
   }
